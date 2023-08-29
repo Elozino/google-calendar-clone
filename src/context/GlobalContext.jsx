@@ -12,7 +12,11 @@ const GlobalContext = React.createContext({
   dispatchEvent: ({ type, payload }) => { },
   savedEvents: [],
   selectedEvent: null,
-  setSelectedEvent: () => { }
+  setSelectedEvent: () => { },
+  setLabels: () => { },
+  labels: [],
+  updateLabel: () => { },
+  filterEvents: () => { }
 })
 
 

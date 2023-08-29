@@ -45,7 +45,7 @@ const EventModal = () => {
                   dispatchEvent({ type: 'delete', payload: selectedEvent })
                   setShowEventModal(false)
                 }}
-                className="material-icons text-gray-400">
+                className="material-icons text-gray-400 cursor-pointer">
                 delete
               </span>
             )}

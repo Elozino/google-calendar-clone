@@ -6,13 +6,13 @@ import GlobalContext from "../context/GlobalContext"
 
 
 const Day = ({ day, rowIdx }) => {
-  const { setShowEventModal, setDaySelected, savedEvents, setSelectedEvent } = useContext(GlobalContext)
+  const { setShowEventModal, setDaySelected, filterEvents, setSelectedEvent } = useContext(GlobalContext)
   const [dayEvents, setDayEvents] = useState([])
 
   useEffect(() => {
-    const events = savedEvents.filter(event => dayjs(event.day).format('DD-MM-YY') === day.format('DD-MM-YY'))
+    const events = filterEvents.filter(event => dayjs(event.day).format('DD-MM-YY') === day.format('DD-MM-YY'))
     setDayEvents(events)
-  }, [day, savedEvents])
+  }, [day, filterEvents])
 
   function getCurrentDayClass() {
     return day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? 'bg-blue-600 text-white rounded-full w-7' : ''
